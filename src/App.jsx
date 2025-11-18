@@ -16,7 +16,7 @@ function App() {
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false); // 🔹 로그인 상태
 
-  const API_BASE_URL = "http://13.125.251.195:5000";
+  const API_BASE_URL = "https://uwb-dashboard.duckdns.org";
 
   const fetchEvents = async () => {
     try {
