@@ -85,7 +85,7 @@ function App() {
       {/* 상단 검정 바 */}
       <header className="top-bar">
         <div className="logo-box">
-          <img src="/web_company.svg" alt="company" />
+          <img src={process.env.PUBLIC_URL + "/web_company.svg"} alt="company" />
         </div>
 
         <button
@@ -100,7 +100,7 @@ function App() {
       {/* 본문 */}
       <main className="page-container">
         <div className="system-title-row">
-          <img src="/web_logo.svg" alt="logo" className="system-logo" />
+          <img src={process.env.PUBLIC_URL + "/web_logo.svg"} alt="logo" className="system-logo" />
           <span className="system-title-text" style={{ fontWeight: 700 }}>UWB 센서 관제 시스템</span>
         </div>
 
