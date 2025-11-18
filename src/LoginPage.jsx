@@ -1,4 +1,6 @@
 import { useState } from "react";
+import companyLogo from "./assets/web_company.svg";
+import systemLogo from "./assets/web_logo.svg";
 
 function LoginPage({ onLogin }) {
   const [memberId, setMemberId] = useState("");
@@ -17,7 +19,7 @@ function LoginPage({ onLogin }) {
       {/* 상단 검정 바 (로고만) */}
       <header className="top-bar">
         <div className="logo-box">
-          <img src="/web_company.svg" alt="company" />
+          <img src={companyLogo} alt="company" />
         </div>
       </header>
 
@@ -25,7 +27,7 @@ function LoginPage({ onLogin }) {
       <main className="login-page">
         <div className="login-card">
           <div className="login-logo-wrap">
-            <img src="/web_logo.svg" alt="logo" className="login-logo" />
+            <img src={systemLogo} alt="logo" className="system-logo" />
           </div>
           <h1 className="login-title">UWB 센서 관제 시스템 로그인</h1>
           <p className="login-subtitle">회원번호(시리얼)로 로그인하세요.</p>

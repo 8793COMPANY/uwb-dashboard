@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import "./App.css";
 import LoginPage from "./LoginPage";
+import companyLogo from "./assets/web_company.svg";
+import systemLogo from "./assets/web_logo.svg";
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -85,7 +87,7 @@ function App() {
       {/* 상단 검정 바 */}
       <header className="top-bar">
         <div className="logo-box">
-          <img src={process.env.PUBLIC_URL + "/web_company.svg"} alt="company" />
+          <img src={companyLogo} alt="company" />
         </div>
 
         <button
@@ -100,7 +102,7 @@ function App() {
       {/* 본문 */}
       <main className="page-container">
         <div className="system-title-row">
-          <img src={process.env.PUBLIC_URL + "/web_logo.svg"} alt="logo" className="system-logo" />
+          <img src={systemLogo} alt="logo" className="system-logo" />
           <span className="system-title-text" style={{ fontWeight: 700 }}>UWB 센서 관제 시스템</span>
         </div>
 
