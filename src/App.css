@@ -499,3 +499,146 @@ body {
 .login-submit-btn:hover {
   background: #1d4ed8;
 }
+
+
+/* ---------------------------
+   반응형 레이아웃 설정
+   --------------------------- */
+
+/* 1024px 이하 : 태블릿 정도 */
+@media (max-width: 1024px) {
+  .page-container {
+    padding: 16px;
+  }
+
+  .system-title-row {
+    margin-bottom: 20px;
+  }
+
+  .system-title-text {
+    font-size: 24px;
+  }
+
+  .main-layout {
+    flex-direction: column;  /* 좌우 → 위/아래로 쌓기 */
+    gap: 16px;
+  }
+
+  .panel-left {
+    width: 100%;      /* 왼쪽 패널 전체 폭 */
+  }
+
+  .panel-right {
+    width: 100%;      /* 오른쪽 패널도 전체 폭 */
+  }
+
+  .panel {
+    padding: 16px 14px;
+  }
+}
+
+/* 768px 이하 : 휴대폰 */
+@media (max-width: 768px) {
+  .top-bar {
+    height: 56px;
+    padding: 0 12px;
+  }
+
+  .logo-box img {
+    height: 20px;
+    width: auto;
+  }
+
+  .page-container {
+    padding: 12px;
+  }
+
+  .system-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .system-logo {
+    height: 28px;
+  }
+
+  .system-title-text {
+    font-size: 20px;
+  }
+
+  /* 인원 목록 글씨 조금 줄이기 */
+  .person-list {
+    font-size: 16px;
+  }
+
+  .person-item {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+
+  /* 날짜 입력 박스 살짝 줄이기 */
+  .date-picker input[type="date"] {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  /* 테이블: 폰트 & 패딩 줄이고 가로 스크롤 허용 */
+  .table-wrapper {
+    overflow-x: auto;    /* 가로 스크롤 */
+  }
+
+  .events-table {
+    font-size: 13px;
+    min-width: 600px;    /* 너무 좁아지면 옆으로 스크롤하게 */
+  }
+
+  .events-table th,
+  .events-table td {
+    padding: 8px 8px;
+  }
+
+  .events-table th {
+    font-size: 13px;
+  }
+
+  .col-time {
+    width: 70px;
+  }
+
+  .col-anchor,
+  .col-distance,
+  .col-level {
+    width: 120px;
+  }
+
+  .status-badge {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+
+  /* 로그인 페이지도 모바일 대응 */
+  .login-card {
+    width: 100%;
+    max-width: 360px;
+    padding: 28px 20px 24px;
+  }
+
+  .login-title {
+    font-size: 20px;
+  }
+
+  .login-label {
+    font-size: 16px;
+  }
+
+  .login-field input {
+    padding: 12px 12px;
+    font-size: 14px;
+  }
+
+  .login-submit-btn {
+    padding: 12px 0;
+    font-size: 15px;
+  }
+}
