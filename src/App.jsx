@@ -15,6 +15,7 @@ function App() {
     return d.toISOString().slice(0, 10);
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false); // 🔹 로그인 상태
+  const [selectedLevel, setSelectedLevel] = useState("ALL");
 
   const API_BASE_URL = "https://uwb-dashboard.duckdns.org";
 
@@ -54,9 +55,21 @@ function App() {
       if (dateStr !== selectedDate) return false;
       if (selectedFloor !== "ALL" && e.floor !== selectedFloor) return false;
       if (selectedPerson !== "ALL" && e.person !== selectedPerson) return false;
+
+      // 🔹 레벨 정규화 (danger / warning / 나머지는 safe)
+      const lvRaw = (e.level || "").toString().trim().toLowerCase();
+      const normalizedLevel =
+        lvRaw === "danger" ? "danger" :
+          lvRaw === "warning" ? "warning" :
+            "safe";
+
+      if (selectedLevel !== "ALL" && normalizedLevel !== selectedLevel) {
+        return false;
+      }
+
       return true;
     });
-  }, [events, selectedDate, selectedFloor, selectedPerson]);
+  }, [events, selectedDate, selectedFloor, selectedPerson, selectedLevel]);
 
   const formatTime = (ms) => {
     const d = new Date(ms);
@@ -173,13 +186,30 @@ function App() {
             <div className="panel-header row-between">
               <span>날짜별 기록 목록</span>
 
-              <div className="date-picker">
-                <input
-                  type="date"
-                  value={selectedDate}
-                  onChange={(e) => setSelectedDate(e.target.value)}
-                />
+              {/* 🔹 날짜 + 레벨 필터 묶어서 오른쪽 정렬 */}
+              <div className="panel-filters" style={{ display: "flex", gap: "20px", alignItems: "center" }}>
+                {/* 🔹 레벨 선택 */}
+                <select
+                  value={selectedLevel}
+                  onChange={(e) => setSelectedLevel(e.target.value)}
+                  className="level-select"
+                >
+                  <option value="ALL">전체 레벨</option>
+                  <option value="safe">안전</option>
+                  <option value="warning">주의</option>
+                  <option value="danger">위험</option>
+                </select>
+
+                {/* 🔹 날짜 선택 */}
+                <div className="date-picker">
+                  <input
+                    type="date"
+                    value={selectedDate}
+                    onChange={(e) => setSelectedDate(e.target.value)}
+                  />
+                </div>
               </div>
+
             </div>
 
             <div className="table-wrapper">

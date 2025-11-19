@@ -209,6 +209,32 @@ body {
   color: #969696;        /* 연한 회색 */
 }
 
+/* 레벨 선택 (날짜 input이랑 같은 느낌으로) */
+.level-select {
+  padding: 10px 36px 10px 14px;   /* 오른쪽은 화살표 자리 확보 */
+  border-radius: 8px;
+  border: 1px solid #d4d4d4;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: inherit;
+  letter-spacing: -0.5px;
+  box-shadow: 0 0 8px 0 rgba(7, 17, 35, 0.03);
+  background-color: #fff;
+
+  /* 기본 셀렉트 화살표 제거 */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* 커스텀 화살표 아이콘 (날짜랑 맞추기) */
+  background-image: url("/web_arrow_down.svg");
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: right 14px center;
+
+  cursor: pointer;
+}
+
 /* 날짜 선택 */
 
 .date-picker input[type="date"] {
@@ -216,8 +242,9 @@ body {
   border-radius: 8px;
   border: 1px solid #d4d4d4;
   font-size: 16px;
-  font-weight: 400;              
-  font-family: inherit;           /* Pretendard 상속 */
+  font-weight: 400;
+  font-family: inherit;
+  /* Pretendard 상속 */
   letter-spacing: -0.5px;
   /* SHADOWS */
   box-shadow: 0 0 8px 0 rgba(7, 17, 35, 0.03);
@@ -231,9 +258,12 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;     /* 전체 너비 덮기 */
-  height: 100%;    /* 전체 높이 덮기 */
-  opacity: 0;      /* 완전 투명 */
+  width: 100%;
+  /* 전체 너비 덮기 */
+  height: 100%;
+  /* 전체 높이 덮기 */
+  opacity: 0;
+  /* 완전 투명 */
   cursor: pointer;
 }
 
@@ -249,15 +279,18 @@ body {
   right: 16px;
   top: 50%;
   transform: translateY(-50%);
-  width: 16px;   /* SVG 크기 */
+  width: 16px;
+  /* SVG 크기 */
   height: 16px;
 
-  background-image: url("/web_arrow_down.svg");  /* SVG 경로 */
+  background-image: url("/web_arrow_down.svg");
+  /* SVG 경로 */
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
 
-  pointer-events: none;   /* 아이콘 눌러도 뒤에 input이 눌리게 */
+  pointer-events: none;
+  /* 아이콘 눌러도 뒤에 input이 눌리게 */
 }
 
 /* 테이블 */
@@ -265,16 +298,20 @@ body {
 .table-wrapper {
   margin-top: 10px;
 
-  flex: 1;          /* 패널 안에서 남은 높이 모두 사용 */
-  min-height: 0;    /* 스크롤 되게 */
-  overflow-y: auto; /* 행이 많아지면 스크롤 */
+  flex: 1;
+  /* 패널 안에서 남은 높이 모두 사용 */
+  min-height: 0;
+  /* 스크롤 되게 */
+  overflow-y: auto;
+  /* 행이 많아지면 스크롤 */
 }
 
 .events-table {
   width: 100%;
   border-collapse: collapse;
   /* table-layout: fixed; */
-  table-layout: auto;      /* 내용 기준으로 너비 배분 */
+  table-layout: auto;
+  /* 내용 기준으로 너비 배분 */
   font-size: 15px;
   color: #232323;
   font-weight: 400;
@@ -300,12 +337,14 @@ body {
 }
 
 .col-time {
-  width: 90px;          /* 예: 시간은 조금만 */
+  width: 90px;
+  /* 예: 시간은 조금만 */
   white-space: nowrap;
 }
 
 .col-name {
-  width: 25%;           /* 이름(시리얼)은 넉넉하게 */
+  width: 25%;
+  /* 이름(시리얼)은 넉넉하게 */
 }
 
 .col-anchor {
@@ -381,12 +420,15 @@ body {
 }
 
 .system-logo {
-  height: 32px;   /* 원하는 높이로 조정 */
-  width: auto;    /* 비율 유지 */
+  height: 32px;
+  /* 원하는 높이로 조정 */
+  width: auto;
+  /* 비율 유지 */
 }
 
 .system-title-text {
-  color: #0451a5;  /* 파란색 텍스트 */
+  color: #0451a5;
+  /* 파란색 텍스트 */
   font-size: 32px;
 }
 
@@ -402,7 +444,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f4f4f4; /* 바탕 연회색 */
+  background: #f4f4f4;
+  /* 바탕 연회색 */
 }
 
 /* 로그인 카드 */
@@ -472,9 +515,9 @@ body {
 
 /* placeholder(힌트 텍스트) 스타일 */
 .login-field input::placeholder {
-  color: #999999;      
-  font-size: 15px;     
-  font-weight: 500;    
+  color: #999999;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .login-field input:focus {
@@ -520,16 +563,19 @@ body {
   }
 
   .main-layout {
-    flex-direction: column;  /* 좌우 → 위/아래로 쌓기 */
+    flex-direction: column;
+    /* 좌우 → 위/아래로 쌓기 */
     gap: 16px;
   }
 
   .panel-left {
-    width: 100%;      /* 왼쪽 패널 전체 폭 */
+    width: 100%;
+    /* 왼쪽 패널 전체 폭 */
   }
 
   .panel-right {
-    width: 100%;      /* 오른쪽 패널도 전체 폭 */
+    width: 100%;
+    /* 오른쪽 패널도 전체 폭 */
   }
 
   .panel {
@@ -583,14 +629,21 @@ body {
     font-size: 14px;
   }
 
+  .level-select {
+    padding: 8px 30px 8px 12px;
+    font-size: 14px;
+  }
+
   /* 테이블: 폰트 & 패딩 줄이고 가로 스크롤 허용 */
   .table-wrapper {
-    overflow-x: auto;    /* 가로 스크롤 */
+    overflow-x: auto;
+    /* 가로 스크롤 */
   }
 
   .events-table {
     font-size: 13px;
-    min-width: 600px;    /* 너무 좁아지면 옆으로 스크롤하게 */
+    min-width: 600px;
+    /* 너무 좁아지면 옆으로 스크롤하게 */
   }
 
   .events-table th,
